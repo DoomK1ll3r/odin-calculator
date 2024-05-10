@@ -27,6 +27,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     height: 100vh;
     width: 70vh;
     background-color: var(--dark-color);
@@ -41,8 +42,39 @@ main {
     background-color: var(--light-color);
     height: 4rem;
     border-radius: 1.5rem;
+    border: 2px solid gray;
 }
 
 #input-area {
+    color: black;
+    text-align: left;
     font-size: 2.5rem;
+}
+
+#buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 40%;
+}
+
+#number-buttons {
+    flex-direction: column;
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+
+.number-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    flex: 1;
+}
+
+button {
+    flex: 1;
+    font-size: 2.5rem;
+    border-radius: 25%;
 }
