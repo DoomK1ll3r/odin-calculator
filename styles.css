@@ -34,6 +34,7 @@ main {
     border-radius: 3rem;
     min-height: 700px;
     min-width: 490px;
+    border: 5px solid darkblue;
 }
 
 #input-wrapper {
@@ -46,6 +47,7 @@ main {
 }
 
 #input-area {
+    padding: 0.5rem;
     color: black;
     text-align: left;
     font-size: 4rem;
