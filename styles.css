@@ -79,6 +79,15 @@ main {
     height: 100%;
 }
 
+#op-buttons button{
+    background: linear-gradient(blue 75%, darkblue);
+    color: var(--light-color);
+}
+
+button:hover {
+    filter: brightness(85%);
+}
+
 .number-row {
     gap: 0.5rem;
     display: flex;
@@ -89,8 +98,18 @@ main {
 }
 
 button {
+    background: linear-gradient(var(--light-color), lightgray);
+    font-weight: 600;
     flex: 1;
     font-size: 2.5rem;
     border-radius: 40%;
     padding: 2rem 0;
+}
+
+#btn-del {
+    background: linear-gradient(red,darkred) !important;
+}
+
+#btn-clear {
+    background: linear-gradient(green 75%,darkgreen) !important;
 }
