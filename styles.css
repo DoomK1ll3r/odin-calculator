@@ -41,16 +41,19 @@ main {
     margin: 2rem;
     width: 90%;
     background-color: var(--light-color);
-    height: 6rem;
+    height: 7.5rem;
     border-radius: 1.5rem;
     border: 2px solid gray;
+    overflow-x: scroll;
+    align-items: center;
+    display: flex;
 }
 
 #input-area {
-    padding: 0.5rem;
+    padding: 0 0.75rem;
     color: black;
     text-align: left;
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 #buttons-wrapper {

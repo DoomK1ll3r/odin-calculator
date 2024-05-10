@@ -9,6 +9,8 @@ const btn7 = document.getElementById("btn-7");
 const btn8 = document.getElementById("btn-8");
 const btn9 = document.getElementById("btn-9");
 const btn0 = document.getElementById("btn-0");
+const btnClear = document.getElementById("btn-clear");
+const btnDel = document.getElementById("btn-del");
 
 let firstOperand = 0;
 let secondOperand = 0;
@@ -50,8 +52,16 @@ function operate (operator, firstOperand = 0, secondOperand = 0) {
   }
 }
 
+function clear () {
+  input.innerText = ``;
+}
+
 function updateDisplay (digit) {
   input.innerText += `${digit}`;
+}
+
+function del () {
+  input.innerText = input.innerText.slice(0,-1);
 }
 
 btn1.addEventListener("click", () => updateDisplay('1'));
@@ -64,3 +74,5 @@ btn7.addEventListener("click", () => updateDisplay('7'));
 btn8.addEventListener("click", () => updateDisplay('8'));
 btn9.addEventListener("click", () => updateDisplay('9'));
 btn0.addEventListener("click", () => updateDisplay('0'));
+btnClear.addEventListener("click", () => clear());
+btnDel.addEventListener("click", () => del());
