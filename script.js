@@ -1,15 +1,39 @@
-function add (a = 0, b = 0) {
-  return a + b;
+let firstOperand = 0;
+let secondOperand = 0;
+let operator = 0;
+
+function add (firstOperand = 0, secondOperand = 0) {
+  return firstOperand + secondOperand;
 }
 
-function substract (a = 0, b = 0) {
-  return a - b;
+function substract (firstOperand = 0, secondOperand = 0) {
+  return firstOperand - secondOperand;
 }
 
-function multiply (a = 0, b = 0) {
-  return a * b;
+function multiply (firstOperand = 0, secondOperand = 0) {
+  return firstOperand * secondOperand;
 }
 
-function divide (a = 0, b = 1) {
-  return a / b;
+function divide (firstOperand = 0, secondOperand = 1) {
+  return firstOperand / secondOperand;
+}
+
+function operate (operator, firstOperand = 0, secondOperand = 0) {
+  switch (operator) {
+    case '+':
+      return add(firstOperand, secondOperand);
+      break;
+    case '-':
+      return substract(firstOperand, secondOperand);
+      break;
+    case '*':
+      return multiply(firstOperand, secondOperand);
+      break;
+    case '/':
+      return divide(firstOperand, secondOperand);
+      break;
+    default:
+      return "There is an error";
+      break;
+  }
 }
