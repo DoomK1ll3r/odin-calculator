@@ -40,7 +40,7 @@ main {
     margin: 2rem;
     width: 90%;
     background-color: var(--light-color);
-    height: 4rem;
+    height: 6rem;
     border-radius: 1.5rem;
     border: 2px solid gray;
 }
@@ -48,24 +48,34 @@ main {
 #input-area {
     color: black;
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 4rem;
 }
 
 #buttons-wrapper {
     display: flex;
     flex-direction: row;
     width: 90%;
-    height: 40%;
+    height: 50%;
+    gap: 1rem;
+}
+
+#number-buttons, #op-buttons {
+    flex-direction: column;
+    display: flex;
 }
 
 #number-buttons {
-    flex-direction: column;
-    display: flex;
     width: 60%;
     height: 100%;
 }
 
+#op-buttons {
+    width: 40%;
+    height: 100%;
+}
+
 .number-row {
+    gap: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -76,5 +86,6 @@ main {
 button {
     flex: 1;
     font-size: 2.5rem;
-    border-radius: 25%;
+    border-radius: 40%;
+    padding: 2rem 0;
 }
