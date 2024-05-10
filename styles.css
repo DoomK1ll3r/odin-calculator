@@ -1,9 +1,48 @@
 :root {
+    --light-color: #fffdf2;
+    --dark-color: #0d0d1a;
     font-size: 10px;
 }
 
 * {
     padding: 0;
     margin: 0;
-    box-sizing: box-border;
+    box-sizing: border-box;
+}
+
+main {
+    color: var(--light-color);
+    font-size: 1.8rem;
+    font-family: roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-header {
+    padding: 1rem;
+}
+
+#calculator-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 70vh;
+    background-color: var(--dark-color);
+    border-radius: 3rem;
+    min-height: 700px;
+    min-width: 490px;
+}
+
+#input-wrapper {
+    margin: 2rem;
+    width: 90%;
+    background-color: var(--light-color);
+    height: 4rem;
+    border-radius: 1.5rem;
+}
+
+#input-area {
+    font-size: 2.5rem;
 }
