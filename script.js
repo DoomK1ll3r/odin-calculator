@@ -1,4 +1,5 @@
 const input = document.getElementById("input-area");
+const output = document.getElementById("output-area");
 const btn1 = document.getElementById("btn-1");
 const btn2 = document.getElementById("btn-2");
 const btn3 = document.getElementById("btn-3");
@@ -9,12 +10,17 @@ const btn7 = document.getElementById("btn-7");
 const btn8 = document.getElementById("btn-8");
 const btn9 = document.getElementById("btn-9");
 const btn0 = document.getElementById("btn-0");
+const btnDot = document.getElementById("btn-dot");
 const btnClear = document.getElementById("btn-clear");
 const btnDel = document.getElementById("btn-del");
-
-let firstOperand = 0;
-let secondOperand = 0;
-let operator = 0;
+const btnSum = document.getElementById("btn-sum");
+const btnSubs = document.getElementById("btn-substract");
+const btnMult = document.getElementById("btn-mult");
+const btnDiv = document.getElementById("btn-div");
+const btnEq = document.getElementById("btn-equal");
+const firstOperand = document.getElementById("first-operand");
+const secondOperand = document.getElementById("second-operand");
+const operator = document.getElementById("operator");
 
 function add (firstOperand = 0, secondOperand = 0) {
   return firstOperand + secondOperand;
@@ -35,16 +41,16 @@ function divide (firstOperand = 0, secondOperand = 1) {
 function operate (operator, firstOperand = 0, secondOperand = 0) {
   switch (operator) {
     case '+':
-      return add(firstOperand, secondOperand);
+      output.innerText = add(firstOperand, secondOperand);
       break;
     case '-':
-      return substract(firstOperand, secondOperand);
+      output.innerText = substract(firstOperand, secondOperand);
       break;
     case '*':
-      return multiply(firstOperand, secondOperand);
+      output.innerText = multiply(firstOperand, secondOperand);
       break;
     case '/':
-      return divide(firstOperand, secondOperand);
+      output.innerText =  divide(firstOperand, secondOperand);
       break;
     default:
       return "There is an error";
@@ -53,15 +59,31 @@ function operate (operator, firstOperand = 0, secondOperand = 0) {
 }
 
 function clear () {
-  input.innerText = ``;
+  operator.innerText = '';
+  firstOperand.innerText = '';
+  secondOperand.innerText = '';
+  output.innerText = '';
 }
 
 function updateDisplay (digit) {
-  input.innerText += `${digit}`;
+  if(firstOperand.innerText == '' || operator.innerText === '') {
+    firstOperand.innerText += `${digit}`;
+  }
+  else {
+    secondOperand.innerText += `${digit}`;
+  }
 }
 
 function del () {
-  input.innerText = input.innerText.slice(0,-1);
+  if (secondOperand.innerText != '') {
+    secondOperand.innerText = secondOperand.innerText.slice(0,-1);
+  }
+  else if (operator.innerText != '') {
+    operator.innerText = operator.innerText.slice(0,-1);
+  }
+  else {
+    firstOperand.innerText = firstOperand.innerText.slice(0,-1);
+  }
 }
 
 btn1.addEventListener("click", () => updateDisplay('1'));
@@ -74,5 +96,11 @@ btn7.addEventListener("click", () => updateDisplay('7'));
 btn8.addEventListener("click", () => updateDisplay('8'));
 btn9.addEventListener("click", () => updateDisplay('9'));
 btn0.addEventListener("click", () => updateDisplay('0'));
+btnDot.addEventListener("click", () => updateDisplay('.'));
 btnClear.addEventListener("click", () => clear());
 btnDel.addEventListener("click", () => del());
+btnSum.addEventListener("click", () => operator.innerText = "+");
+btnSubs.addEventListener("click", () => operator.innerText = "-");
+btnMult.addEventListener("click", () => operator.innerText = "*");
+btnDiv.addEventListener("click", () => operator.innerText = "/");
+btnEq.addEventListener("click", () => operate(operator.innerText, parseFloat(firstOperand.innerText), parseFloat(secondOperand.innerText)));
